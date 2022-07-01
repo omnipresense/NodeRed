@@ -1,0 +1,1588 @@
+[
+    {
+        "id": "bb8303eb.51403",
+        "type": "tab",
+        "label": "init and persist",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "1f1a5468.01049c",
+        "type": "tab",
+        "label": "OPS24x message handling",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "9f369077.bff4d",
+        "type": "tab",
+        "label": "Dashboard",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "e03da8ad.cf5928",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "694afa76.e4c434",
+        "type": "ui_group",
+        "name": "Dashboard",
+        "tab": "ad04b6c.b8b0848",
+        "order": 2,
+        "disp": false,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "2e7a8b15.a85544",
+        "type": "ui_group",
+        "name": "Location",
+        "tab": "ad04b6c.b8b0848",
+        "order": 1,
+        "disp": false,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "914b5fad.64cf5",
+        "type": "persist-store",
+        "filename": "persistance.json",
+        "interval": "60"
+    },
+    {
+        "id": "ad04b6c.b8b0848",
+        "type": "ui_tab",
+        "name": "OmniPreSense Live Radar Data",
+        "icon": "dashboard",
+        "disabled": true,
+        "hidden": false
+    },
+    {
+        "id": "85c96aad.1e43d8",
+        "type": "persist-store",
+        "filename": "init.json",
+        "interval": "5"
+    },
+    {
+        "id": "f0d74d01.35697",
+        "type": "serial-port",
+        "serialport": "COM3",
+        "serialbaud": "19200",
+        "databits": "8",
+        "parity": "none",
+        "stopbits": "1",
+        "waitfor": "",
+        "newline": "\\n",
+        "bin": "false",
+        "out": "char",
+        "addchar": "",
+        "responsetimeout": "10000"
+    },
+    {
+        "id": "6bdebb5bbb6766e5",
+        "type": "mqtt-broker",
+        "name": "test.mosquitto.org",
+        "broker": "test.mosquitto.org",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "9b60e56c.15fa08",
+        "type": "change",
+        "z": "bb8303eb.51403",
+        "name": "payload to init object",
+        "rules": [
+            {
+                "t": "set",
+                "p": "init",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 380,
+        "y": 100,
+        "wires": [
+            [
+                "1af85bc09b9aa571"
+            ]
+        ]
+    },
+    {
+        "id": "412c54d6.f8452c",
+        "type": "persist in",
+        "z": "bb8303eb.51403",
+        "name": "init-store",
+        "storageNode": "85c96aad.1e43d8",
+        "x": 120,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "783ee145.6c3cb",
+        "type": "persist out",
+        "z": "bb8303eb.51403",
+        "name": "init-fetch",
+        "storageNode": "85c96aad.1e43d8",
+        "x": 120,
+        "y": 140,
+        "wires": [
+            [
+                "9b60e56c.15fa08"
+            ]
+        ]
+    },
+    {
+        "id": "310f0168.f1712e",
+        "type": "change",
+        "z": "bb8303eb.51403",
+        "name": "create random int",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "($random()-0.5)*100",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 150,
+        "y": 392,
+        "wires": [
+            [
+                "8050916d.b4eb5"
+            ]
+        ]
+    },
+    {
+        "id": "7c51694.4cec998",
+        "type": "inject",
+        "z": "bb8303eb.51403",
+        "name": "repeat",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "60",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "noop",
+        "payloadType": "str",
+        "x": 100,
+        "y": 352,
+        "wires": [
+            [
+                "310f0168.f1712e"
+            ]
+        ]
+    },
+    {
+        "id": "8050916d.b4eb5",
+        "type": "change",
+        "z": "bb8303eb.51403",
+        "name": "Inject to OPS as canned data",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "\"PI\\n\" & \"#=100,\" & $formatNumber( payload, '#') &\t\"\\n#=100,\" & $formatNumber( payload, '#') & \t\"\\n#=100,\" & $formatNumber( payload, '#') &\t\"\\n#=0,0\\n#=0,0\\n#=0,0\\n#=0,0\\n\" & \"PA\\n\"",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 220,
+        "y": 432,
+        "wires": [
+            [
+                "5bbbba8e.932ae4"
+            ]
+        ]
+    },
+    {
+        "id": "90bea6ac.a193f8",
+        "type": "comment",
+        "z": "bb8303eb.51403",
+        "name": "To pump in fake data, enable the repeater",
+        "info": "Useful for injecting fake data:",
+        "x": 180,
+        "y": 292,
+        "wires": []
+    },
+    {
+        "id": "a3d36ee2.e18d5",
+        "type": "comment",
+        "z": "bb8303eb.51403",
+        "name": "About current random values:",
+        "info": "At the moment, the random # is -45 to +45\n",
+        "x": 380,
+        "y": 392,
+        "wires": []
+    },
+    {
+        "id": "3b7a2c54.24d664",
+        "type": "inject",
+        "z": "bb8303eb.51403",
+        "name": "radar site init",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "2",
+        "topic": "",
+        "payload": "UKBVOJONF0S2?P",
+        "payloadType": "str",
+        "x": 130,
+        "y": 40,
+        "wires": [
+            [
+                "20a8946f.9e397c",
+                "412c54d6.f8452c",
+                "9b60e56c.15fa08"
+            ]
+        ]
+    },
+    {
+        "id": "5bbbba8e.932ae4",
+        "type": "serial out",
+        "z": "bb8303eb.51403",
+        "d": true,
+        "name": "TX to OPS",
+        "serial": "f0d74d01.35697",
+        "x": 210,
+        "y": 472,
+        "wires": []
+    },
+    {
+        "id": "20a8946f.9e397c",
+        "type": "serial out",
+        "z": "bb8303eb.51403",
+        "name": "Send to OPS24x",
+        "serial": "f0d74d01.35697",
+        "x": 570,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "1af85bc09b9aa571",
+        "type": "change",
+        "z": "bb8303eb.51403",
+        "name": "send radar init via mqtt",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "USBVOJONF0S2?P",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "\t$globalContext('init.ops_site.station') & \"/command\"\t",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "action",
+                "pt": "msg",
+                "to": "connect",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 600,
+        "y": 100,
+        "wires": [
+            [
+                "a628aa5f18d0a0a2"
+            ]
+        ]
+    },
+    {
+        "id": "a628aa5f18d0a0a2",
+        "type": "mqtt out",
+        "z": "bb8303eb.51403",
+        "name": "mqtt--init",
+        "topic": "",
+        "qos": "0",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "6bdebb5bbb6766e5",
+        "x": 780,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "efffba7c.9fe288",
+        "type": "json",
+        "z": "1f1a5468.01049c",
+        "name": "parse to JSON obj",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 470,
+        "y": 60,
+        "wires": [
+            [
+                "3b9f9d2.8aa8c62",
+                "232ffdbc.238862"
+            ]
+        ]
+    },
+    {
+        "id": "38a0af38.65445",
+        "type": "change",
+        "z": "1f1a5468.01049c",
+        "name": "change payload to abs(speed)",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "$abs(payload)",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 210,
+        "y": 220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d3de1209.2efbb",
+        "type": "change",
+        "z": "1f1a5468.01049c",
+        "name": "change payload to the speed number",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "$number(payload.DetectedObjectVelocity)",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 210,
+        "y": 180,
+        "wires": [
+            [
+                "38a0af38.65445",
+                "2aa52237.4379de"
+            ]
+        ]
+    },
+    {
+        "id": "3b9f9d2.8aa8c62",
+        "type": "switch",
+        "z": "1f1a5468.01049c",
+        "name": "if message contains DetectedObjectVelocity",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "hask",
+                "v": "DetectedObjectVelocity",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 210,
+        "y": 140,
+        "wires": [
+            [
+                "d3de1209.2efbb"
+            ]
+        ]
+    },
+    {
+        "id": "f4a5bbf.4c66448",
+        "type": "logger",
+        "z": "1f1a5468.01049c",
+        "name": "log all_received",
+        "filename": "all_received.log",
+        "maxsize": 1,
+        "maxfiles": 10,
+        "complete": "payload",
+        "console": false,
+        "file": true,
+        "debug": false,
+        "zip": false,
+        "logtype": "info",
+        "x": 320,
+        "y": 20,
+        "wires": []
+    },
+    {
+        "id": "905d5806.decb88",
+        "type": "switch",
+        "z": "1f1a5468.01049c",
+        "name": "blanks filter",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "jsonata_exp",
+                "v": "$length(payload)>1\t",
+                "vt": "jsonata"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 250,
+        "y": 60,
+        "wires": [
+            [
+                "efffba7c.9fe288"
+            ]
+        ]
+    },
+    {
+        "id": "232ffdbc.238862",
+        "type": "link out",
+        "z": "1f1a5468.01049c",
+        "name": "JSON To Dashboard",
+        "links": [
+            "12bdc8c1.a450a7"
+        ],
+        "x": 755,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "2aa52237.4379de",
+        "type": "link out",
+        "z": "1f1a5468.01049c",
+        "name": "Speed to Dashboard",
+        "links": [
+            "3ec2a60e.75df4a"
+        ],
+        "x": 435,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "458efd79.ffab64",
+        "type": "comment",
+        "z": "1f1a5468.01049c",
+        "name": "capture sensor output",
+        "info": "",
+        "x": 120,
+        "y": 20,
+        "wires": []
+    },
+    {
+        "id": "4c91b643.921ed8",
+        "type": "serial in",
+        "z": "1f1a5468.01049c",
+        "name": "COM3",
+        "serial": "f0d74d01.35697",
+        "x": 70,
+        "y": 60,
+        "wires": [
+            [
+                "f4a5bbf.4c66448",
+                "905d5806.decb88"
+            ]
+        ]
+    },
+    {
+        "id": "891c9684.aac168",
+        "type": "switch",
+        "z": "9f369077.bff4d",
+        "name": "if message contains Product",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "hask",
+                "v": "Product",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 220,
+        "y": 200,
+        "wires": [
+            [
+                "5e189e90.172c"
+            ]
+        ]
+    },
+    {
+        "id": "5e189e90.172c",
+        "type": "ui_text",
+        "z": "9f369077.bff4d",
+        "group": "694afa76.e4c434",
+        "order": 1,
+        "width": 6,
+        "height": 1,
+        "name": "",
+        "label": "Product:",
+        "format": "{{msg.payload.Product}}",
+        "layout": "row-spread",
+        "x": 440,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "850d1aa4.8de558",
+        "type": "ui_text",
+        "z": "9f369077.bff4d",
+        "group": "694afa76.e4c434",
+        "order": 7,
+        "width": 4,
+        "height": 1,
+        "name": "",
+        "label": "Clock",
+        "format": "{{msg.payload.Clock}}",
+        "layout": "row-right",
+        "x": 430,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "1c5df18f.73d21e",
+        "type": "switch",
+        "z": "9f369077.bff4d",
+        "name": "if message contains Clock",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "hask",
+                "v": "Clock",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 210,
+        "y": 240,
+        "wires": [
+            [
+                "850d1aa4.8de558"
+            ]
+        ]
+    },
+    {
+        "id": "61c4d9f1.c73808",
+        "type": "switch",
+        "z": "9f369077.bff4d",
+        "name": "if message contains TimedSpeedCounts",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "hask",
+                "v": "TimedSpeedCounts",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 260,
+        "y": 280,
+        "wires": [
+            [
+                "f5b3b8ec.c91018",
+                "29285603.5f5a9a"
+            ]
+        ]
+    },
+    {
+        "id": "e228413f.8086e",
+        "type": "change",
+        "z": "9f369077.bff4d",
+        "name": "change TimedSpeedCounts.count to number",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "$number(payload.TimedSpeedCounts.count)\t",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 330,
+        "y": 400,
+        "wires": [
+            [
+                "dddfbb94.aab3a8",
+                "11f964a8.a1e84b"
+            ]
+        ]
+    },
+    {
+        "id": "f5b3b8ec.c91018",
+        "type": "switch",
+        "z": "9f369077.bff4d",
+        "name": "if TimedSpeedCounts contains inbound",
+        "property": "payload.TimedSpeedCounts.direction",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "cont",
+                "v": "inbound",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 300,
+        "y": 360,
+        "wires": [
+            [
+                "e228413f.8086e"
+            ]
+        ]
+    },
+    {
+        "id": "dddfbb94.aab3a8",
+        "type": "ui_chart",
+        "z": "9f369077.bff4d",
+        "name": "",
+        "group": "694afa76.e4c434",
+        "order": 2,
+        "width": 6,
+        "height": 3,
+        "label": "Inbound Count (last 15 min.)",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "pending new data",
+        "dot": true,
+        "ymin": "0",
+        "ymax": "4",
+        "removeOlder": "15",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#b31e1e",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "x": 700,
+        "y": 400,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "29285603.5f5a9a",
+        "type": "switch",
+        "z": "9f369077.bff4d",
+        "name": "if TimedSpeedCounts contains outbound",
+        "property": "payload.TimedSpeedCounts.direction",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "cont",
+                "v": "outbound",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 300,
+        "y": 460,
+        "wires": [
+            [
+                "6b6cbd67.5d69e4"
+            ]
+        ]
+    },
+    {
+        "id": "f120ec0b.bdd6e",
+        "type": "ui_chart",
+        "z": "9f369077.bff4d",
+        "name": "",
+        "group": "694afa76.e4c434",
+        "order": 4,
+        "width": 6,
+        "height": 3,
+        "label": "Outbound Count (last 15 min.)",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "pending new data",
+        "dot": true,
+        "ymin": "0",
+        "ymax": "4",
+        "removeOlder": "15",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "x": 710,
+        "y": 520,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6b6cbd67.5d69e4",
+        "type": "change",
+        "z": "9f369077.bff4d",
+        "name": "change TimedSpeedCounts.count to number",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "$number(payload.TimedSpeedCounts.count)\t",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 330,
+        "y": 500,
+        "wires": [
+            [
+                "f120ec0b.bdd6e",
+                "5c113c28.227544"
+            ]
+        ]
+    },
+    {
+        "id": "f6c8f2b.31ba61",
+        "type": "ui_worldmap",
+        "z": "9f369077.bff4d",
+        "group": "2e7a8b15.a85544",
+        "order": 1,
+        "width": 6,
+        "height": 4,
+        "name": "",
+        "lat": "37.390304",
+        "lon": "-122.078775",
+        "zoom": "15",
+        "layer": "OSM",
+        "cluster": "",
+        "maxage": "10",
+        "usermenu": "show",
+        "layers": "show",
+        "panit": "false",
+        "panlock": "false",
+        "zoomlock": "false",
+        "hiderightclick": "false",
+        "coords": "none",
+        "showgrid": "false",
+        "path": "/worldmap",
+        "x": 1020,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "4d4c3a53.4b27f4",
+        "type": "inject",
+        "z": "9f369077.bff4d",
+        "name": "Send \"marker\"",
+        "repeat": "60",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "2",
+        "topic": "",
+        "payload": "doesnt matter",
+        "payloadType": "str",
+        "x": 1060,
+        "y": 100,
+        "wires": [
+            [
+                "51c98b3a.2fec54"
+            ]
+        ]
+    },
+    {
+        "id": "11f964a8.a1e84b",
+        "type": "bar-chart-data",
+        "z": "9f369077.bff4d",
+        "name": "bar-chart-data (inbound)",
+        "x_interval": "quarter_hours",
+        "x_size": "12",
+        "unit": "",
+        "precision": "1",
+        "is_meter_reading": "False",
+        "agg_by": "sum",
+        "x": 870,
+        "y": 440,
+        "wires": [
+            [
+                "5e573c06.664214",
+                "356971ac.45face"
+            ]
+        ]
+    },
+    {
+        "id": "5e573c06.664214",
+        "type": "ui_chart",
+        "z": "9f369077.bff4d",
+        "name": "",
+        "group": "694afa76.e4c434",
+        "order": 3,
+        "width": 6,
+        "height": 2,
+        "label": "Inbound (westbound history)",
+        "chartType": "bar",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "12",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": true,
+        "useUTC": false,
+        "colors": [
+            "#b31e1e",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "x": 980,
+        "y": 480,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5c113c28.227544",
+        "type": "bar-chart-data",
+        "z": "9f369077.bff4d",
+        "name": "bar-chart-data (outbound)",
+        "x_interval": "quarter_hours",
+        "x_size": "12",
+        "unit": "",
+        "precision": "1",
+        "is_meter_reading": "False",
+        "agg_by": "sum",
+        "x": 870,
+        "y": 560,
+        "wires": [
+            [
+                "861b6b0c.22de38"
+            ]
+        ]
+    },
+    {
+        "id": "861b6b0c.22de38",
+        "type": "ui_chart",
+        "z": "9f369077.bff4d",
+        "name": "",
+        "group": "694afa76.e4c434",
+        "order": 5,
+        "width": 6,
+        "height": 2,
+        "label": "Outbound (eastbound history)",
+        "chartType": "bar",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": true,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "x": 990,
+        "y": 600,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "eb164e57.2355f",
+        "type": "ui_ui_control",
+        "z": "9f369077.bff4d",
+        "name": "On Connect",
+        "events": "connect",
+        "x": 1030,
+        "y": 60,
+        "wires": [
+            [
+                "51c98b3a.2fec54"
+            ]
+        ]
+    },
+    {
+        "id": "1ff768e6.d4fe97",
+        "type": "smooth",
+        "z": "9f369077.bff4d",
+        "name": "max smooth30",
+        "property": "payload",
+        "action": "max",
+        "count": "500",
+        "round": "0",
+        "mult": "single",
+        "reduce": false,
+        "x": 640,
+        "y": 140,
+        "wires": [
+            [
+                "624c6282.c8603c"
+            ]
+        ]
+    },
+    {
+        "id": "3cae4d91.617452",
+        "type": "smooth",
+        "z": "9f369077.bff4d",
+        "name": "mean smooth30",
+        "property": "payload",
+        "action": "mean",
+        "count": "500",
+        "round": "0",
+        "mult": "single",
+        "reduce": false,
+        "x": 640,
+        "y": 180,
+        "wires": [
+            [
+                "af4555e3.9f65d8"
+            ]
+        ]
+    },
+    {
+        "id": "624c6282.c8603c",
+        "type": "ui_text",
+        "z": "9f369077.bff4d",
+        "group": "694afa76.e4c434",
+        "order": 5,
+        "width": 3,
+        "height": 1,
+        "name": "",
+        "label": "Max",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "x": 790,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "af4555e3.9f65d8",
+        "type": "ui_text",
+        "z": "9f369077.bff4d",
+        "group": "694afa76.e4c434",
+        "order": 4,
+        "width": 3,
+        "height": 1,
+        "name": "",
+        "label": "Avg",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "x": 790,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "51c98b3a.2fec54",
+        "type": "change",
+        "z": "9f369077.bff4d",
+        "name": "set marker payload",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\t   \"name\":\"marker\",\t   \"lat\":$globalContext('lat'),\t   \"lon\":$globalContext('lon'),\t   \"icon\":\"map-marker\",\t   \"color\":\"#dd0000\" \t}",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1030,
+        "y": 220,
+        "wires": [
+            [
+                "f6c8f2b.31ba61"
+            ]
+        ]
+    },
+    {
+        "id": "12bdc8c1.a450a7",
+        "type": "link in",
+        "z": "9f369077.bff4d",
+        "name": "",
+        "links": [
+            "232ffdbc.238862"
+        ],
+        "x": 55,
+        "y": 100,
+        "wires": [
+            [
+                "891c9684.aac168",
+                "1c5df18f.73d21e",
+                "61c4d9f1.c73808"
+            ]
+        ]
+    },
+    {
+        "id": "3ec2a60e.75df4a",
+        "type": "link in",
+        "z": "9f369077.bff4d",
+        "name": "",
+        "links": [
+            "2aa52237.4379de"
+        ],
+        "x": 55,
+        "y": 60,
+        "wires": [
+            [
+                "3c040451.8b109c",
+                "9152267.e43f1d8"
+            ]
+        ]
+    },
+    {
+        "id": "3c040451.8b109c",
+        "type": "switch",
+        "z": "9f369077.bff4d",
+        "name": "Switch pos/neg",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "gt",
+                "v": "0",
+                "vt": "num"
+            },
+            {
+                "t": "lt",
+                "v": "0",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 320,
+        "y": 100,
+        "wires": [
+            [
+                "ae543559.76d898"
+            ],
+            [
+                "9437a00d.3b786"
+            ]
+        ]
+    },
+    {
+        "id": "ae543559.76d898",
+        "type": "change",
+        "z": "9f369077.bff4d",
+        "name": "speed to inbound json",
+        "rules": [
+            {
+                "t": "set",
+                "p": "speed",
+                "pt": "msg",
+                "to": "$join([ \"&nbsp;in:&nbsp;\", $formatNumber(msg.payload, '0')],' ')",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\t   \"name\":\"inbound\",\t   \"lat\":$globalContext('lat'),\t   \"lon\":$globalContext('lon'),\t   \"label\":$.speed,\t   \"ttl\":10,\t   \"color\":\"red\"\t}",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 740,
+        "y": 260,
+        "wires": [
+            [
+                "f6c8f2b.31ba61"
+            ]
+        ]
+    },
+    {
+        "id": "9437a00d.3b786",
+        "type": "change",
+        "z": "9f369077.bff4d",
+        "name": "speed to outbound json",
+        "rules": [
+            {
+                "t": "set",
+                "p": "speed",
+                "pt": "msg",
+                "to": "$join([ \"out:\", $formatNumber($abs(msg.payload), '0')],' ')",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\t   \"name\":\"outbound\",\t   \"lat\":$globalContext('lat'),\t   \"lon\":$globalContext('lon'),\t   \"label\":$.speed,\t   \"ttl\":10,\t   \"color\":\"blue\"}",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 750,
+        "y": 300,
+        "wires": [
+            [
+                "f6c8f2b.31ba61"
+            ]
+        ]
+    },
+    {
+        "id": "9152267.e43f1d8",
+        "type": "change",
+        "z": "9f369077.bff4d",
+        "name": "change payload to abs(speed)",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "$abs(payload)",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 370,
+        "y": 60,
+        "wires": [
+            [
+                "f4bae416.038088",
+                "f753a4d4.eb7ca8",
+                "1ff768e6.d4fe97",
+                "3cae4d91.617452"
+            ]
+        ]
+    },
+    {
+        "id": "f753a4d4.eb7ca8",
+        "type": "ui_gauge",
+        "z": "9f369077.bff4d",
+        "name": "speedgauge",
+        "group": "2e7a8b15.a85544",
+        "order": 2,
+        "width": 6,
+        "height": 3,
+        "gtype": "gage",
+        "title": "Recent Speed",
+        "label": "mph",
+        "format": "{{value}}",
+        "min": "0",
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 810,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "f4bae416.038088",
+        "type": "ui_chart",
+        "z": "9f369077.bff4d",
+        "name": "",
+        "group": "2e7a8b15.a85544",
+        "order": 3,
+        "width": 6,
+        "height": 4,
+        "label": "Speed over Time",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "10",
+        "ymax": "100",
+        "removeOlder": "12",
+        "removeOlderPoints": "5000",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#28b31e",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "x": 830,
+        "y": 100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1e382a3c.849e36",
+        "type": "ui_button",
+        "z": "9f369077.bff4d",
+        "name": "",
+        "group": "694afa76.e4c434",
+        "order": 6,
+        "width": 2,
+        "height": 1,
+        "passthru": false,
+        "label": "Fetch clock",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "C?",
+        "payloadType": "str",
+        "topic": "",
+        "x": 150,
+        "y": 580,
+        "wires": [
+            [
+                "a9629288.16f14"
+            ]
+        ]
+    },
+    {
+        "id": "5cb3d66.1df1728",
+        "type": "inject",
+        "z": "9f369077.bff4d",
+        "name": "send Product Query",
+        "props": [
+            {
+                "p": "payload",
+                "v": "?P",
+                "vt": "str"
+            },
+            {
+                "p": "topic",
+                "v": "",
+                "vt": "string"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "",
+        "topic": "",
+        "payload": "?P",
+        "payloadType": "str",
+        "x": 170,
+        "y": 620,
+        "wires": [
+            [
+                "9462c472.0218b8"
+            ]
+        ]
+    },
+    {
+        "id": "25957790.345898",
+        "type": "debug",
+        "z": "9f369077.bff4d",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 730,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "356971ac.45face",
+        "type": "persist out",
+        "z": "9f369077.bff4d",
+        "name": "store (in)",
+        "storageNode": "914b5fad.64cf5",
+        "x": 1090,
+        "y": 440,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "cb26fe4b.f7a71",
+        "type": "persist out",
+        "z": "9f369077.bff4d",
+        "name": "Recover (in)",
+        "storageNode": "914b5fad.64cf5",
+        "x": 730,
+        "y": 480,
+        "wires": [
+            [
+                "11f964a8.a1e84b"
+            ]
+        ]
+    },
+    {
+        "id": "a9629288.16f14",
+        "type": "serial out",
+        "z": "9f369077.bff4d",
+        "name": "Send to OPS24x",
+        "serial": "f0d74d01.35697",
+        "x": 370,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "9462c472.0218b8",
+        "type": "serial out",
+        "z": "9f369077.bff4d",
+        "name": "Send to OPS24x",
+        "serial": "f0d74d01.35697",
+        "x": 370,
+        "y": 620,
+        "wires": []
+    }
+]
